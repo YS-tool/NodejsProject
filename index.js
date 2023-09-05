@@ -52,7 +52,7 @@ const server = http.createServer(async function(_request, response) {
   const droppedResult = await dropTable(connection);
 
   // Make the output.
-  const outputString = `Hello, World! - A simple Node.js template for Platform.sh
+  const outputString = `Hello, World! This is Yanlin- A simple Node.js template for Platform.sh
 MariaDB Tests:
 * Connect and add row:
   - Row ID (1): ${rows[0].uid}
