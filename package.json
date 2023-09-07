@@ -13,8 +13,11 @@
   "author": "Platform.sh",
   "license": "MIT",
   "dependencies": {
-    "mongodb": "^4.17.1",
-    "mysql2": "^1.6.5",
+    "body-parser": "^1.20.2",
+    "connect-flash": "^0.1.1",
+    "express": "^4.18.2",
+    "express-session": "^1.17.3",
+    "passport": "^0.6.0",
     "platformsh-config": "^2.4.1"
   }
 }
