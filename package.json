@@ -13,8 +13,8 @@
   "author": "Platform.sh",
   "license": "MIT",
   "dependencies": {
-    "mongodb": "^6.0.0",
+    "mongodb": "^4.17.1",
     "mysql2": "^1.6.5",
-    "platformsh-config": "^2.0.0"
+    "platformsh-config": "^2.4.1"
   }
 }

@@ -1,7 +1,7 @@
 const http = require("http");
 
 const config = require("platformsh-config").config();
-const mongodb = require("mongodb");
+const { mongodb } = require('mongodb');
 
 const usageExample = async function () {
   const credentials = config.credentials("mongodb");
@@ -53,15 +53,21 @@ const server = http.createServer(async function(_request, response) {
   const outputString = `Hello, World! This is Yanlin- A simple Node.js template for Platform.sh`
 
   const variable = await usageExample()
+
   response.writeHead(200, { "Content-Type": "text/plain" });
-  response.end(variable);
+  response.end(outputString);
 });
 
-// Get PORT and start the server
-server.listen(config.port, function() {
-  console.log(`Listening on port ${config.port}`);
-});
+if(config.inRuntime()){
+  // Get PORT and start the server
+  server.listen(config.port, function() {
+    console.log(`Listening on port ${config.port}`);
+  });
+}else{
+  server.listen(5555, function() {
+    console.log(`Listening on port 5555`);
+  });
+}
 
-// server.listen(5555, function() {
-//   console.log(`Listening on port 5555`);
-// });
+
+
