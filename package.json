@@ -18,6 +18,8 @@
     "ejs": "^3.1.9",
     "express": "^4.18.2",
     "express-session": "^1.17.3",
+    "mongoose": "^7.5.1",
+    "node-cron": "^3.0.2",
     "passport": "^0.6.0",
     "platformsh-config": "^2.4.1"
   }
