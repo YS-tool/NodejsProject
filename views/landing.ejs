@@ -47,50 +47,119 @@
   </div>
 </section><!-- End Hero -->
 
+<!-- ======= Services Section ======= -->
+<section class="services">
+  <div class="container">
 
-  <!-- ======= Services Section ======= -->
-  <section class="services">
-    <div class="container">
-
-      <div class="row">
-        <div class="col-md-6 col-lg-3 d-flex align-items-stretch" data-aos="fade-up">
-          <div class="icon-box icon-box-pink">
-            <div class="icon"><i class="bx bxl-dribbble"></i></div>
-            <h4 class="title"><a href="">Lorem Ipsum</a></h4>
-            <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident</p>
-          </div>
+    <div class="row">
+      <div class="col-md-6 col-lg-3 d-flex align-items-stretch" data-aos="fade-up">
+        <div class="icon-box icon-box-pink">
+          <div class="icon"><i class="bx bxl-dribbble"></i></div>
+          <h4 class="title"><a href="" >You browser is          </a></h4>
+          <p class="description" id="userBrowser">Unknown</p>
         </div>
+      </div>
 
-        <div class="col-md-6 col-lg-3 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
-          <div class="icon-box icon-box-cyan">
-            <div class="icon"><i class="bx bx-file"></i></div>
-            <h4 class="title"><a href="">Sed ut perspiciatis</a></h4>
-            <p class="description">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur</p>
-          </div>
+      <div class="col-md-6 col-lg-3 d-flex align-items-stretch" data-aos="fade-up" name="notChrome_show">
+        <div class="icon-box icon-box-pink">
+          <div class="icon"><i class="bx bxl-dribbble"></i></div>
+          <h4 class="title"><a href="" >Sorry this section display correctly Chrome for sure</a></h4>
+          <p class="description">Other browser may display correctly, but I am not sure. the Compatability for each browser is hard</p> 
         </div>
+      </div>
 
-        <div class="col-md-6 col-lg-3 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
-          <div class="icon-box icon-box-green">
-            <div class="icon"><i class="bx bx-tachometer"></i></div>
-            <h4 class="title"><a href="">Magni Dolores</a></h4>
-            <p class="description">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
-          </div>
+      <div class="col-md-6 col-lg-3 d-flex align-items-stretch" data-aos="fade-up" name="notChrome_Hide">
+        <div class="icon-box icon-box-pink">
+          <div class="icon"><i class="bx bxl-dribbble"></i></div>
+          <h4 class="title"><a href="" >You are on          </a></h4>
+          <p class="description" id="userSystem">Unknown</p> <p>operating system</p>
         </div>
+      </div>
 
-        <div class="col-md-6 col-lg-3 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
-          <div class="icon-box icon-box-blue">
-            <div class="icon"><i class="bx bx-world"></i></div>
-            <h4 class="title"><a href="">Nemo Enim</a></h4>
-            <p class="description">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque</p>
-          </div>
+      <div class="col-md-6 col-lg-3 d-flex align-items-stretch" data-aos="fade-up" name="notChrome_Hide" data-aos-delay="100">
+        <div class="icon-box icon-box-cyan">
+          <div class="icon"><i class="bx bx-file"></i></div>
+          <h4 class="title"><a href="">Your cpu has          </a></h4>
+          <p class="description" id="userCpuCores">Unknown</p> <p>Cores</p>
         </div>
+      </div>
 
+      <div class="col-md-6 col-lg-3 d-flex align-items-stretch" data-aos="fade-up" name="notChrome_Hide" data-aos-delay="200">
+        <div class="icon-box icon-box-green">
+          <div class="icon"><i class="bx bx-tachometer"></i></div>
+          <h4 class="title"><a href="">Your default language is </a></h4>
+          <p class="description" id="userDefaultLan">Unknown</p>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-3 d-flex align-items-stretch" data-aos="fade-up" name="notChrome_Hide" data-aos-delay="200">
+        <div class="icon-box icon-box-blue">
+          <div class="icon"><i class="bx bx-world"></i></div>
+          <h4 class="title"><a href="">Your device</a></h4>
+          <p class="description" id="userMaxTouchpoint">Unknown</p>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-3 d-flex align-items-stretch" data-aos="fade-up" name="notChrome_Hide" data-aos-delay="200">
+        <div class="icon-box icon-box-blue">
+          <div class="icon"><i class="bx bx-world"></i></div>
+          <h4 class="title"><a href="">Your device is</a></h4>
+          <p class="description" id="userChargeStat">Unknown</p>
+        </div>
       </div>
 
     </div>
-  </section><!-- End Services Section -->
+
+  </div>
+</section><!-- End Services Section -->
+
+<script>
+
+  $(async function(){
+    var userObj = await getUserAndHWinfo()
+
+    $("#userBrowser").text(userObj.browser)
+
+    if(userObj.browser!="Chrome"){
+      $("[name=notChrome_Hide]").remove();
+    }else{
+      $("[name=notChrome_show]").remove();
+    }
+
+    $("#userSystem").text(userObj.userOS)
+    $("#userCpuCores").text(userObj.cpuCore)
+    $("#userDefaultLan").text(userObj.defaultLan)
+
+    var userTouchPoint
+    if (userObj.touchPoint ==0 ){
+      userTouchPoint =  "does not support touch screen"
+    }else{
+      userTouchPoint = "support " + userObj.touchPoint +" point touch simultaneously"
+    }
+    $("#userMaxTouchpoint").text(userTouchPoint)
 
 
+    var isCharging = userObj.battery
+    var batteryCharge;
+    if (isCharging){
+      batteryCharge= "charging"
+    }else{
+      batteryCharge="is not charging"
+    }
+    $("#userChargeStat").text(batteryCharge)
+
+
+    $.post("/trace", {
+      pageName   : "langing page",
+      browser    : userObj.browser,
+      userOS     : userObj.userOS,
+    });
+
+  });
+
+
+
+</script>
 
 
 <%- include('common/footer') -%>
