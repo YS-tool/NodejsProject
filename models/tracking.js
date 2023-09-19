@@ -5,7 +5,9 @@ const TrackingData = new mongoose.Schema({
       type:String,
       default:"unknown"
     },
-    pageName: String
+    pageName: String,
+    browser:String,
+    userOS:String,
   }
   ,{timestamps:true}
 );

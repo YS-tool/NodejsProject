@@ -37,6 +37,7 @@ mongoose.connect(MONGOuri,
 
 // routes
 app.use('/', require("./routes/index"));
+app.use('/trace', require("./routes/trace"));
 
 
 // var task = require("./config/cronjob")
@@ -60,16 +61,6 @@ if(config.inRuntime()){
 //-----------------------------------------------------------------------------------
 // outline for this branch
 
-// 1: add mongo connector
-// 2: add mongoose model
-// 3: For example: when go to one page, write to database one record
-
-// 4: have a user schema. For example when user click on one page, auto create one page. 
-// 5: if possible, have a cron job clean the user collection
-
-
-//-----------------------------------------------------------------------
-// next branch
 // UI for login, Add MFA is possible
 
 // 1: create login UI and backend for user login
@@ -81,3 +72,27 @@ if(config.inRuntime()){
 
 
 // use cookie
+
+
+// have a page for jquery show box? least priority
+
+
+
+
+
+// DONE-------------------------------
+
+// version 0.0
+// add mongo connector
+// add mongoose model
+// when go to one page, write to database one record: trace user behavior
+// have a user schema, have tracker schema
+// cron job
+
+// version 0.1 --trackUserData branch
+// get user information from browser
+// using jquery modify UI
+// using jquery send a post request about user information
+// have a route handler for track
+// update mongo track schema
+// save user information to database
