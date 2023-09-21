@@ -38,6 +38,7 @@ mongoose.connect(MONGOuri,
 // routes
 app.use('/', require("./routes/index"));
 app.use('/trace', require("./routes/trace"));
+app.use('/techInfo', require("./routes/techInfo"));
 
 
 // var task = require("./config/cronjob")
