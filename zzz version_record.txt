@@ -1,0 +1,38 @@
+
+This page will display the development history of this website
+Latest version on top
+The purpose for this page is to show my ability of doing version control
+
+
+Version ???: Future feature tha need to implement
+have a collection for user to play around
+cron job that clean up database
+Login, MFA, google authenticator. UI needed
+Use cookie, remember this device
+404 page
+
+Version 0.4: Website intro page
+Add 2 pages, one page is to record each version change
+the other page is to record existing feature.
+
+Version 0.3: Jquery and TrackUser data
+Add Jquery library. Using jquery to modify HTML
+Get user device information from DOM navigator
+Using Jquery send a post request to backend, and backend save to database
+Implement backend post request handler for tracked user data
+
+Version 0.2: add data structure, mongo connection
+Add mongoose module
+Register Mongo Atlas account. Create connection
+Create User, Track Schema. 
+Add insert function. Save a document to database when visit each page.
+
+Version 0.1: Add basic UI
+implememnt MVC design pattern, Different folder for each component
+Server initialization, add root url handler.
+Find a online free UI template, modify their UI code and implement.
+
+version 0.0: hello world
+Learn how to Platform.sh, follow the tutorial to start a nodejs hello world project 
+
+

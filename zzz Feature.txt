@@ -1,0 +1,35 @@
+Techincal detail for each feature in this website
+
+Here are the techincal detail in this website
+
+The tech structure for this webside is 
+Platform.sh ---- nodejs ---- mongodb
+
+Platform.sh is a cloud service provider. 
+It provide a space that I can upload my project and they runs on their side
+
+Nodejs is handling the frontend and backend. The frontend is EJS, and backend is a express Server
+
+Mongodb is using Mongo atlas, it is a cloud database service provided by offical Mongodb
+
+----------------------------------------------------------------
+
+Here is the detailed CVM design pattern implemented
+
+Controller ---- view ---- model
+
+Controller is using express router,
+View is using EJS and Javascript
+Model is using mongoose and mongodb
+
+-------------------------------------------------------------------
+
+highlight tech detail on Index page
+
+The dom navigator get user information
+The jquery choose different element to display based on different browser
+Then Jquery send a post request to backend, and backend saved data to database
+
+---------------------------------------------------------
+
+That's it for now
