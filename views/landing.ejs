@@ -47,6 +47,17 @@
   </div>
 </section><!-- End Hero -->
 
+<!-- ======= About Us Section ======= -->
+<section class="breadcrumbs">
+  <div class="container">
+
+    <div class="section-title">
+      <h2>Device information</h2>
+      <p>This section is dynamically changed by Jquery, it will display different info if you open this page on different browser or devices. </p>
+    </div>
+  </div>
+</section><!-- End About Us Section -->
+
 <!-- ======= Services Section ======= -->
 <section class="services">
   <div class="container">
@@ -63,8 +74,8 @@
       <div class="col-md-6 col-lg-3 d-flex align-items-stretch" data-aos="fade-up" name="notChrome_show">
         <div class="icon-box icon-box-pink">
           <div class="icon"><i class="bx bxl-dribbble"></i></div>
-          <h4 class="title"><a href="" >Sorry this section display correctly Chrome for sure</a></h4>
-          <p class="description">Other browser may display correctly, but I am not sure. the Compatability for each browser is hard</p> 
+          <h4 class="title"><a href="" >Sorry this section is only fully tested on Chrome</a></h4>
+          <p class="description">Other browsers may display correctly, but I am not sure. the Compatability for each browser is hard</p> 
         </div>
       </div>
 
@@ -81,6 +92,14 @@
           <div class="icon"><i class="bx bx-file"></i></div>
           <h4 class="title"><a href="">Your cpu has          </a></h4>
           <p class="description" id="userCpuCores">Unknown</p> <p>Cores</p>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-lg-3 d-flex align-items-stretch" data-aos="fade-up" name="notChrome_Hide" data-aos-delay="200">
+        <div class="icon-box icon-box-green">
+          <div class="icon"><i class="bx bx-tachometer"></i></div>
+          <h4 class="title"><a href="">Your Device has </a></h4>
+          <p class="description" id="userRamGbs">Unknown</p> <p>GB rams</p>
         </div>
       </div>
 
@@ -128,6 +147,14 @@
 
     $("#userSystem").text(userObj.userOS)
     $("#userCpuCores").text(userObj.cpuCore)
+
+    if (userObj.memory>=8){
+      $("#userRamGbs").text("greate than 8")
+    }else{
+      $("#userRamGbs").text(userObj.memory)
+    }
+
+
     $("#userDefaultLan").text(userObj.defaultLan)
 
     var userTouchPoint
